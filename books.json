@@ -1,0 +1,199 @@
+[
+    {
+        "title": "Книга 1",
+        "place": {
+            "shelf": 1,
+            "row": 1,
+            "position": 1
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 2",
+        "place": {
+            "shelf": 1,
+            "row": 1,
+            "position": 2
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 3",
+        "place": {
+            "shelf": 1,
+            "row": 1,
+            "position": 3
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 4",
+        "place": {
+            "shelf": 1,
+            "row": 1,
+            "position": 4
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 5",
+        "place": {
+            "shelf": 1,
+            "row": 2,
+            "position": 1
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга6",
+        "place": {
+            "shelf": 1,
+            "row": 2,
+            "position": 2
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 7",
+        "place": {
+            "shelf": 1,
+            "row": 2,
+            "position": 3
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 8",
+        "place": {
+            "shelf": 1,
+            "row": 2,
+            "position": 4
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 9",
+        "place": {
+            "shelf": 1,
+            "row": 3,
+            "position": 1
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 10",
+        "place": {
+            "shelf": 1,
+            "row": 3,
+            "position": 2
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 11",
+        "place": {
+            "shelf": 1,
+            "row":3,
+            "position": 3
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 12",
+        "place": {
+            "shelf": 1,
+            "row": 3,
+            "position": 4
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 13",
+        "place": {
+            "shelf": 1,
+            "row": 4,
+            "position": 1
+        },
+        "status": "free",
+        "userLogin": ""
+    },    {
+        "title": "Книга 14",
+        "place": {
+            "shelf": 1,
+            "row": 4,
+            "position": 2
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 15",
+        "place": {
+            "shelf": 1,
+            "row": 4,
+            "position": 3
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    { "title": "Книга 16",
+        "place": {
+            "shelf": 1,
+            "row": 4,
+            "position": 4
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 17",
+        "place": {
+            "shelf": 2,
+            "row": 1,
+            "position": 1
+        },
+        "status": "free",
+        "userLogin": ""
+    }, {
+        "title": "Книга 18",
+        "place": {
+            "shelf": 2,
+            "row": 1,
+            "position": 2
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 19",
+        "place": {
+            "shelf": 2,
+            "row": 1,
+            "position": 3
+        },
+        "status": "free",
+        "userLogin": ""
+    },
+    {
+        "title": "Книга 20",
+        "place": {
+            "shelf": 2,
+            "row": 1,
+            "position": 4
+        },
+        "status": "free",
+        "userLogin": ""
+    }
+]
