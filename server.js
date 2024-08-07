@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Настройка CORS
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: ['http://localhost:5173', 'http://185.119.56.165', 'http://185.119.56.165:5173'] }));
 
 // Подключение к базе данных MongoDB
 try {
