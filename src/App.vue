@@ -14,7 +14,7 @@ import axios from 'axios';
 import { RouterView } from 'vue-router';
 import { mapState } from 'vuex';
 
-axios.defaults.baseURL = "http://localhost:3000"
+axios.defaults.baseURL = "http://185.119.56.165:3000"
 
 export default {
     components: {
