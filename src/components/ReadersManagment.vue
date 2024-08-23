@@ -30,6 +30,15 @@ export default {
                 this.openAccordionIndex = index;
             }
         },
+        userOverdue(user) {
+            for (let i = 0; i < user.borrowedBooks.length; i++) {
+                let bookEndDate = user.borrowedBooks[i].endDate;
+                if (this.overdueCheck(bookEndDate)) {
+                    return true;
+                }
+            };
+            return false;
+        },
         userHasActiveLoans(user) {
             return user.borrowedBooks.length > 0;
         },
@@ -87,6 +96,27 @@ export default {
             } catch (error) {
                 console.error("Произошла ошибка на стороне сервера:", error.message);
             }
+        },
+        overdueCheck(bookEndDate) {
+            let nowDate = new Date();
+
+            const formattedStartDate = 
+            nowDate.toLocaleDateString('ru-RU', { year: 'numeric', month: '2-digit', day: '2-digit' }) + ' ' +
+            nowDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+            let [date, time] = formattedStartDate.split(' ');
+            let [day, month, year] = date.split('.');
+            let [hours, minutes] = time.split(':');
+            nowDate = new Date(year, month-1, day, hours, minutes);
+
+            [date, time] = bookEndDate.split(' ');
+            [day, month, year] = date.split('.');
+            [hours, minutes] = time.split(':');
+            const returnDate = new Date(year, month-1, day, hours, minutes);
+
+            if (returnDate < nowDate) {
+                return true;
+            }
         }
     },
     created() {
@@ -110,13 +140,22 @@ export default {
         <div class="accordion" id="accordionExample" v-else>
             <div v-for="(user, index) in users" class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" 
+                    <button v-if="userOverdue(user)" class="accordion-button collapsed" 
                             type="button" 
                             data-bs-toggle="collapse"
                             :data-bs-target="'#id' + index" 
                             aria-expanded="false" 
                             :aria-controls="'#id' + index" >
-                        {{ user.name }} {{  user.lastName }}
+                        <span>{{ user.name }} {{ user.lastName }}</span>
+                        <span class="text-danger fw-bold ms-5"> У пользователя есть просроченные книги!</span>
+                    </button>
+                    <button v-else class="accordion-button collapsed" 
+                            type="button" 
+                            data-bs-toggle="collapse"
+                            :data-bs-target="'#id' + index" 
+                            aria-expanded="false" 
+                            :aria-controls="'#id' + index" >
+                        <span>{{ user.name }} {{ user.lastName }}</span>
                     </button>
                 </h2>
                 
@@ -161,7 +200,7 @@ export default {
                                     <tr v-for="book in user.borrowedBooks">
                                         <td class="align-middle">{{ book.title }}</td>
                                         <td class="text-center align-middle">{{ book.startDate }}</td>
-                                        <td class="text-center align-middle">{{ book.endDate }}</td>
+                                        <td class="text-center align-middle" :class="overdueCheck(book.endDate) ? 'table-danger' : ''">{{ book.endDate }}</td>
                                         <td class="text-center align-middle"><button class="btn btn-primary" @click="returnBook(book.bookID, user._id)">Возвращено</button>
                                         </td>
                                     </tr>

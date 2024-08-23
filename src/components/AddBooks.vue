@@ -34,6 +34,7 @@ export default {
                 let book = this.books[i];
                 if (!book.title || !book.place.shelf || !book.place.row || !book.place.position) {
                     alert("У Вас есть незаполненные поля, отправка на сервер не будет осуществлена");
+                    break;
                 } else {
                     const formData = new FormData();
                     formData.append('books', JSON.stringify(this.books));
