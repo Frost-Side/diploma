@@ -184,6 +184,7 @@ export default {
                             <button v-else @click="activateUser(user._id)" class="btn btn-success">Активировать</button>
                             <button @click="deleteUser(user._id)" :disabled="userHasActiveLoans(user)"
                                 class="btn btn-danger">Удалить</button>
+                            <a class="btn btn-primary" :href="'https://t.me/' + user.telegram" target="_blank">Telegram</a>
                         </div>
                         <div class="borrowed-books" v-if="user.borrowedBooks.length > 0">
                             <h3>Арендованные книги пользователем:</h3>
